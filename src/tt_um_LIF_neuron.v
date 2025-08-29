@@ -1,5 +1,5 @@
 // TT wrapper for your LIF design
-module tt_um_andres_lif (
+module tt_um_Xgamer1999_LIF (
   input  wire        clk,
   input  wire        rst_n,
   input  wire        ena,
