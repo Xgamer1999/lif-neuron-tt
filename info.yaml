@@ -5,7 +5,7 @@ project:
   discord:      "Wendy's Baconator(fartholegaming)"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Our project is a simulation of how a Leaky integrate and Fire nueron works. This project is meant to be a demonstration of how a neural network would deal with weighted averages and how neurons can be used in arrays and VLSI to create more complex neural networks and circuits"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     20000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
