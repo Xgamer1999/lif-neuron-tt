@@ -5,7 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = tt_um_Xgamer1999_LIF.v LIF_neuron_FSM.v LIF_Accumulator.v tt_um_top_lvl.v
 
 ifneq ($(GATES),yes)
 
@@ -14,7 +14,10 @@ SIM_BUILD				= sim_build/rtl
 VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(PROJECT_SOURCES))
 
 else
-
+GATES ?= no
+ifeq ($(GATES),yes)
+$(error Gate-level sim needs IHP PDK. Run "make SIM=icarus" or set GATES=no)
+endif
 # Gate level simulation:
 SIM_BUILD				= sim_build/gl
 COMPILE_ARGS    += -DGL_TEST
@@ -32,8 +35,7 @@ endif
 COMPILE_ARGS 		+= -I$(SRC_DIR)
 
 # Include the testbench sources:
-VERILOG_SOURCES += $(PWD)/tb.v
-TOPLEVEL = tb
+TOPLEVEL = tt_um_Xgamer1999_LIF
 
 # MODULE is the basename of the Python test file
 MODULE = test
